@@ -51,6 +51,7 @@ const HLJS = function(hljs) {
     classPrefix: 'hljs-',
     tabReplace: null,
     useBR: false,
+    useTabIndex: false,
     languages: null,
     // beta configuration options, subject to change, welcome to discuss
     // https://github.com/highlightjs/highlight.js/issues/1086
@@ -680,6 +681,11 @@ const HLJS = function(hljs) {
 
     element.innerHTML = result.value;
     element.className = buildClassName(element.className, language, result.language);
+
+    if (options.useTabIndex) {
+      element.setAttribute("tabindex", "0");
+    }
+
     element.result = {
       language: result.language,
       // TODO: remove with version 11.0

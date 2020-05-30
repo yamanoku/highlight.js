@@ -101,6 +101,7 @@ interface HLJSOptions {
    classPrefix: string
    tabReplace?: string
    useBR: boolean
+   useTabIndex: boolean
    languages?: string[]
    __emitter: EmitterConstructor
 }
